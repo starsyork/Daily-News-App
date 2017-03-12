@@ -2,33 +2,32 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
-
 module.exports = {
-  context: __dirname + '/src',
+  context: path.join(__dirname),
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./js/root.js",
+  entry: "./src/js/root.js",
   module: {
-    loaders:[{
-      test:/\.js?$/,
-      exclude:/(node_modules)/,
-      loader:'babel-loader',
-      query: {
-        presets:['react','es2015'],
-        plugins:['react-html-attrs'],
-      }
-    },{
-      test:/\.css$/, loader:'style-loader!css-loader'
-      // loader:'style!css-loader?modules&iimportLoaders=1&localIndentName=[name]__[local]__[hash:base64:5]'
-    }]
+    loaders: [
+      {
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+          plugins: ['react-html-attrs'], //添加组件的插件配置
+        }
+      },
+      //下面是使用 ant-design 的配置文件
+      { test: /\.css$/, loader: 'style-loader!css-loader' }
+    ]
   },
-  output:{
-    path: __dirname + "/src",
-    publicPath:"/src/",
-    filename: "bundle.js"
+  output: {
+    path: __dirname,
+    filename: "./src/bundle.js"
   },
-  plugins : debug ? [] : [
+  plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false}),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
 };

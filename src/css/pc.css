@@ -1,0 +1,18 @@
+.logo{
+  align-items: center;
+  display: flex;
+}
+
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.logo span{
+  font-size: 28px;
+  padding-left: 10px;
+}
+
+.footer{
+  text-align: center;
+}
