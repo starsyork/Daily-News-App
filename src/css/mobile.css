@@ -22,3 +22,13 @@ html{
   padding-left: 10px;
   color:#2db7f5
 }
+
+
+#mobileheader i {
+  font-size: 0.5rem;
+  float: right;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-right: 0.5rem;
+  color:#2db7f5;
+}

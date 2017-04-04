@@ -1,3 +1,7 @@
+.ant-menu-horizontal > .ant-menu-item > a,.ant-menu-horizontal > .ant-menu-submenu > a {
+   display: inline-block !important;
+}
+
 .logo{
   align-items: center;
   display: flex;
@@ -15,4 +19,8 @@
 
 .footer{
   text-align: center;
+}
+
+.register {
+  float: right !important
 }
