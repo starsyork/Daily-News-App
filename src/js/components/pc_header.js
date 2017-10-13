@@ -1,3 +1,4 @@
+//basic React.js file example to show the implement of React and relative frameworks.
 import React from 'react';
 import 'whatwg-fetch';
 import {Row, Col} from 'antd';
